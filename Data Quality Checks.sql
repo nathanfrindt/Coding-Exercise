@@ -16,7 +16,6 @@ SELECT _id, COUNT(*) as count
 FROM Brands
 GROUP BY _id
 HAVING COUNT(*) > 1;
-Identifying Missing Values
 
 --Determine if there are any crucial missing values in the data. For instance, a receipt without a userId or a brand without a barcode could be problematic.
 

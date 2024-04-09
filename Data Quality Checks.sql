@@ -1,3 +1,24 @@
+-- For the brands.json file:
+-- Inconsistent brandCode Values: Some entries have a brandCode value, while others do not. Consistency in this field is crucial for reliable brand identification and analysis.
+-- Missing Category Codes: Not all entries have a categoryCode. This omission could affect any categorization or segmentation analysis based on brand data.
+-- Use of Placeholder Names: There are entries with names like "test brand @1604946245498", indicating they might be test data or incorrectly entered. This could skew brand-related insights.
+-- Duplicate Entries: While not explicitly shown in the snippets, if there are identical barcodes or brand names with different IDs, it would indicate duplicate data entries.
+
+-- For the receipts.json file:
+-- Varied rewardsReceiptItemList Structures: The structure of rewardsReceiptItemList varies significantly, with some items missing crucial details like description or itemPrice. This inconsistency can lead to challenges in item-level analysis.
+-- Inconsistent userFlagged Fields: Fields like userFlaggedBarcode and userFlaggedNewItem suggest manual intervention or corrections, which might indicate underlying issues with the receipt scanning or processing logic.
+-- Receipt Status Consistency: The rewardsReceiptStatus field has various statuses like "FINISHED" or "FLAGGED". It's important to understand the implications of each status and whether they are appropriately applied.
+-- Points Earned and Bonus Points Logic: There should be a clear and consistent logic behind fields like bonusPointsEarned and pointsEarned. Any inconsistency here could impact user loyalty and engagement metrics.
+
+-- For the users.json file:
+-- Duplicate Entries: There are repeated entries for the same user ID, which suggests duplication in user records. For instance, the user with the ID 5ff1e194b6a9d73a3a9f1052 appears multiple times. This redundancy can lead to inaccurate user counts and skewed data analysis.
+-- Consistency in Last Login: While most records have a lastLogin date, not all do. This inconsistency could impact analyses that rely on user engagement or activity metrics.
+-- Field Completeness: Not every user record has a lastLogin field, which could be crucial for tracking user activity. The absence of this data could limit the ability to perform user engagement analysis accurately.
+-- Active Field: The active field is boolean, which is good for consistency. However, it's essential to verify that this field accurately reflects the user's current status and isn't left stale.
+-- SignUpSource: The signUpSource field varies (e.g., "Email," "Google"). It's important to ensure that all possible sources are captured correctly and consistently.
+
+
+
 --Checking for Duplicate RecordsFor each table, you'd want to check if there are any duplicate entries, which could be done by counting the occurrences of unique identifiers.
 -- For Users
 SELECT _id, COUNT(*) as count

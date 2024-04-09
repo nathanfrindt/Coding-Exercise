@@ -1,0 +1,17 @@
+I hope you're doing well! I've been diving into our data on users, receipts, and brands and have uncovered a few areas that need our attention to ensure our data's accuracy and reliability.
+Here's a snapshot of what I've found:
+
+Some entries in our datasets are missing (like user IDs in receipts and barcodes in brands) or duplicated. It's key for us to understand why this is happening. Could this be related to how we're collecting or integrating our data?
+
+To tackle these issues, I'd love to get your take on any known quirks in our data processes. Plus, knowing which data points are crucial for your upcoming plans will help me prioritize our cleanup efforts.
+
+On discovering these issues, I used SQL to spot any inconsistencies, nulls, or duplicates. It's a solid way to ensure we're working with top-notch data.
+
+Looking ahead, as our data grows, keeping our database speedy and scalable is top of mind. I'm all set to keep an eye on our data's performance and make adjustments as needed, ensuring our insights remain quick and reliable.
+
+Could we chat about how these findings align with your expectations and how we can address them? Your perspective would be incredibly helpful.
+
+Thanks for your time!
+
+Best,
+Nathan Frindt

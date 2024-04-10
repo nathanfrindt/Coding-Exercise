@@ -1,0 +1,54 @@
+Table: Users
+Purpose: This table stores information about users who interact with the system. Each user has a unique identifier and associated attributes.
+Contents:
+_id (UUID, Primary Key): A unique identifier for each user.
+state (String): The state where the user resides.
+createdDate (DateTime): The date and time when the user's account was created.
+lastLogin (DateTime): The last time the user logged into the system.
+role (String): The role of the user within the system (e.g., consumer, admin).
+active (Boolean): Indicates whether the user's account is active.
+
+Table: Receipts
+Purpose: This table holds information about each transaction or purchase event, represented as a receipt.
+Contents:
+_id (UUID, Primary Key): A unique identifier for each receipt.
+userId (UUID): Links to the user who made the transaction (foreign key to Users table).
+bonusPointsEarned (Integer): The number of bonus points earned from the transaction.
+bonusPointsEarnedReason (String): The reason bonus points were awarded.
+createDate (DateTime): When the receipt record was created.
+dateScanned (DateTime): When the receipt was scanned into the system.
+finishedDate (DateTime): When the processing of the receipt was completed.
+modifyDate (DateTime): When the receipt record was last modified.
+pointsAwardedDate (DateTime): When points associated with the purchase were awarded.
+pointsEarned (Integer): The number of points earned from the transaction.
+purchaseDate (DateTime): The date of the purchase.
+purchasedItemCount (Integer): The number of items purchased.
+rewardsReceiptItemList (String): A list or description of the items on the receipt.
+rewardsReceiptStatus (String): The processing status of the receipt.
+totalSpent (Decimal): The total amount spent in the transaction.
+
+Table: Brands
+Purpose: Contains information about the brands of the products involved in the transactions.
+Contents:
+_id (UUID, Primary Key): A unique identifier for each brand.
+barcode (String): A unique code associated with the brand's products.
+brandCode (String): A specific code associated with the brand.
+category (String): The category of products the brand offers.
+categoryCode (String): A code representing the product category.
+cpg (Object): A reference to the Consumer Packaged Goods collection, potentially linking to another dataset or information set.
+topBrand (Boolean): Indicates whether the brand is considered a top brand.
+name (String): The name of the brand.
+
+Table: ReceiptItems
+Purpose: Details each item within a receipt, providing a more granular view of the transactions.
+Contents:
+id (UUID, Primary Key): A unique identifier for each receipt item.
+receiptId (UUID): Links to the receipt the item belongs to (foreign key to Receipts table).
+barcode (String): The barcode of the item, which can be used to link to the Brands table.
+quantity (Integer): The quantity of the item purchased.
+price (Decimal): The price of the item.
+
+Relationships:
+Receipts.userId > Users._id: Indicates that each receipt is linked to a specific user.
+ReceiptItems.receiptId > Receipts._id: Shows that each item listed is part of a specific receipt.
+ReceiptItems.barcode > Brands.barcode: Suggests that items in receipts can be associated with specific brands through the barcode.

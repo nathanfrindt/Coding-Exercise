@@ -5,7 +5,7 @@ Some entries in our datasets are missing (like user IDs in receipts and barcodes
 
 To tackle these issues, I'd love to get your take on any known quirks in our data processes. Plus, knowing which data points are crucial for your upcoming plans will help me prioritize our cleanup efforts.
 
-On discovering these issues, I used SQL to spot any inconsistencies, nulls, or duplicates. It's a solid way to ensure we're working with top-notch data.
+On discovering these issues, I used SQL to spot any inconsistencies, nulls, or duplicates. It's a great way to ensure we're working with top-notch data.
 
 Looking ahead, as our data grows, keeping our database speedy and scalable is top of mind. I'm all set to keep an eye on our data's performance and make adjustments as needed, ensuring our insights remain quick and reliable.
 
